@@ -1,9 +1,6 @@
 import Controller.VendingController;
 import DAO.VendingDao;
 import DAO.VendingDaoFileImpl;
-import DAO.VendingPersistenceException;
-import Service.VendingInsufficientFundsException;
-import Service.VendingNoItemInventoryException;
 import Service.VendingServiceLayer;
 import Service.VendingServiceLayerImpl;
 import UI.UserIO;
@@ -11,7 +8,7 @@ import UI.UserIOConsoleImpl;
 import UI.VendingView;
 
 public class App {
-    public static void main(String[] args) throws VendingNoItemInventoryException, VendingPersistenceException, VendingInsufficientFundsException {
+    public static void main(String[] args) {
         UserIO myIo = new UserIOConsoleImpl();
         VendingView myView = new VendingView(myIo);
         VendingDao myDao = new VendingDaoFileImpl();

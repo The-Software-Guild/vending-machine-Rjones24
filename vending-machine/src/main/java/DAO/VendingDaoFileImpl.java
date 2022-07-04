@@ -1,7 +1,6 @@
 package DAO;
 
 import DTO.VendingMachine;
-import Service.VendingNoItemInventoryException;
 
 import java.io.*;
 import java.math.BigDecimal;
