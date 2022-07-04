@@ -7,13 +7,14 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public interface VendingServiceLayer {
-    VendingMachine AddMoney(BigDecimal money);
 
     List<VendingMachine> getInventory() throws VendingPersistenceException;
 
-    VendingMachine SelectItem(String ItemName) throws VendingNoItemInventoryException;
+    VendingMachine getItem(String Item) throws VendingPersistenceException, VendingNoItemInventoryException;
 
-    VendingMachine BuyItem(String ItemName, BigDecimal money) throws VendingInsufficientFundsException;
+    boolean CheckSelectItem(String ItemName, VendingMachine vending) throws VendingNoItemInventoryException;
 
-    VendingMachine UpdateInventory(String ItemName);
+    void BuyItem(VendingMachine ItemToBuy, BigDecimal money) throws VendingInsufficientFundsException, VendingPersistenceException, VendingNoItemInventoryException;
+
+    String GetMoney(BigDecimal itemPrice, BigDecimal money) throws VendingInsufficientFundsException;
 }

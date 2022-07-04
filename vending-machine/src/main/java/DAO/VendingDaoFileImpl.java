@@ -1,20 +1,16 @@
 package DAO;
 
 import DTO.VendingMachine;
-import Service.VendingInsufficientFundsException;
 import Service.VendingNoItemInventoryException;
 
 import java.io.*;
 import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class VendingDaoFileImpl implements  VendingDao {
     private final String File;
     public static final String DELIMITER = "::";
-    private Map<String, VendingMachine> vending = new HashMap<>();
+    private final Map<String, VendingMachine> vending = new HashMap<>();
 
     public VendingDaoFileImpl(String file) {
         File = file;
@@ -80,27 +76,21 @@ public class VendingDaoFileImpl implements  VendingDao {
     }
 
     @Override
-    public VendingMachine AddMoney(BigDecimal money) {
-        return null;
-    }
-
-    @Override
     public List<VendingMachine> getInventory() throws VendingPersistenceException {
-        return null;
+       loader();
+       return new ArrayList<>(vending.values());
     }
 
     @Override
-    public VendingMachine SelectItem(String ItemName) throws VendingNoItemInventoryException {
-        return null;
+    public VendingMachine SelectItem(String ItemName) throws  VendingPersistenceException {
+        loader();
+        return vending.get(ItemName);
     }
 
     @Override
-    public VendingMachine BuyItem(String ItemName, BigDecimal money) throws VendingInsufficientFundsException {
-        return null;
-    }
-
-    @Override
-    public VendingMachine UpdateInventory(String ItemName) {
-        return null;
+    public void UpdateInventory(String ItemName, VendingMachine vendingMachine) throws VendingPersistenceException {
+        loader();
+        vending.put(ItemName, vendingMachine);
+        Writer();
     }
 }

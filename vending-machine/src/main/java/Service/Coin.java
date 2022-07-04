@@ -1,18 +1,33 @@
 package Service;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public enum Coin {
-    FiftyP, TwentyFiveP, TenP, pennies;
+    FiftyP(new BigDecimal("0.50")), TwentyFiveP(new BigDecimal("0.25")), TenP(new BigDecimal("0.10")), pennies(new BigDecimal("0.01"));
 
+    private final BigDecimal current;
 
-    public static BigDecimal change(Coin type) {
-        return switch (type) {
-            case FiftyP -> new BigDecimal(0.5);
-            case TwentyFiveP -> new BigDecimal(0.25);
-            case TenP -> new BigDecimal(0.1);
-            case pennies -> new BigDecimal(0.01);
-            default -> throw new IllegalStateException("Unexpected value: " + type);
-        };
+    Coin(BigDecimal Current) {
+        this.current = Current;
+    }
+
+    public static String change(BigDecimal Money, BigDecimal ItemPrice) throws VendingInsufficientFundsException {
+        StringBuilder Change;
+        BigDecimal changeValue = Money.subtract(ItemPrice);
+        if(changeValue.doubleValue()  < 0 ){
+            throw new VendingInsufficientFundsException("You have not entered enough money you have £" + Money + " But this item costs £" + ItemPrice + " so have your money back");
+        }else if(changeValue.intValue() == 0.0) {
+            return ("There is no change to be given");
+        }
+        Change = new StringBuilder("Here is your change :");
+        for (Coin coin: Coin.values()) {
+            if(changeValue.compareTo(coin.current)>=0){
+                int amount=changeValue.divide(coin.current, RoundingMode.HALF_UP).intValue();
+                Change.append(" " + amount + " :" + coin.current + "p");
+                changeValue = changeValue.subtract(coin.current.multiply(BigDecimal.valueOf(amount)));
+            }
+        }
+        return Change.toString();
     }
 }
