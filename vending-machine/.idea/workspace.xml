@@ -9,6 +9,7 @@
       <change afterPath="$PROJECT_DIR$/Inventory.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/audit.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/VendingController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/DAO/AuditDao.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/DAO/AuditDaoImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/DAO/VendingDao.java" afterDir="false" />
@@ -87,6 +88,7 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Ryan\Documents\vending-machine-Rjones24\vending-machine" />
+      <recent name="C:\Users\Ryan\Documents\vending-machine-Rjones24\vending-machine\src\main\java" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="Service" />
@@ -152,10 +154,19 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/DAO/AuditDaoImpl.java</url>
+          <line>10</line>
+          <properties class="DAO.AuditDaoImpl" method="writeAuditEntry">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/App.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="17" />
+          <line>18</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

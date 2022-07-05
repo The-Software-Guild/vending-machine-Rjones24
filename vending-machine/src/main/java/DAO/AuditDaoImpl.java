@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import java.time.LocalDateTime;
 
 public class AuditDaoImpl implements AuditDao{
-    String AUDIT = "audit.txt";
+    public static final String AUDIT = "src/main/java/audit.txt";
     @Override
     public void writeAuditEntry(String entry) throws VendingPersistenceException{
         PrintWriter out;
