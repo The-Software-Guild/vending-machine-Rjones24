@@ -110,65 +110,33 @@
       <recent name="DAO" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.VendingDaoFileImplTest">
-    <configuration name="VendingDaoFileImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.VendingServiceLayerImplTest.testBuyItem">
+    <configuration name="VendingServiceLayerImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="vending-machine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="DAO.*" />
+          <option name="PATTERN" value="Service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="DAO" />
-      <option name="MAIN_CLASS_NAME" value="DAO.VendingDaoFileImplTest" />
+      <option name="PACKAGE_NAME" value="Service" />
+      <option name="MAIN_CLASS_NAME" value="Service.VendingServiceLayerImplTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VendingDaoFileImplTest.testGetInventory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VendingServiceLayerImplTest.testBuyItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="vending-machine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="DAO.*" />
+          <option name="PATTERN" value="Service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="DAO" />
-      <option name="MAIN_CLASS_NAME" value="DAO.VendingDaoFileImplTest" />
-      <option name="METHOD_NAME" value="testGetInventory" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VendingDaoFileImplTest.testInventoryUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="vending-machine" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="DAO.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="DAO" />
-      <option name="MAIN_CLASS_NAME" value="DAO.VendingDaoFileImplTest" />
-      <option name="METHOD_NAME" value="testInventoryUpdate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VendingDaoFileImplTest.testSelect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="vending-machine" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="DAO.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="DAO" />
-      <option name="MAIN_CLASS_NAME" value="DAO.VendingDaoFileImplTest" />
-      <option name="METHOD_NAME" value="testSelect" />
+      <option name="PACKAGE_NAME" value="Service" />
+      <option name="MAIN_CLASS_NAME" value="Service.VendingServiceLayerImplTest" />
+      <option name="METHOD_NAME" value="testBuyItem" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -190,12 +158,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="VendingServiceLayerImplTest.testGetItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vending-machine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Service" />
+      <option name="MAIN_CLASS_NAME" value="Service.VendingServiceLayerImplTest" />
+      <option name="METHOD_NAME" value="testGetItem" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VendingServiceLayerImplTest.testGetMoney" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vending-machine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Service" />
+      <option name="MAIN_CLASS_NAME" value="Service.VendingServiceLayerImplTest" />
+      <option name="METHOD_NAME" value="testGetMoney" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.VendingDaoFileImplTest" />
-        <item itemvalue="JUnit.VendingDaoFileImplTest.testInventoryUpdate" />
-        <item itemvalue="JUnit.VendingDaoFileImplTest.testSelect" />
-        <item itemvalue="JUnit.VendingDaoFileImplTest.testGetInventory" />
+        <item itemvalue="JUnit.VendingServiceLayerImplTest.testBuyItem" />
+        <item itemvalue="JUnit.VendingServiceLayerImplTest" />
+        <item itemvalue="JUnit.VendingServiceLayerImplTest.testGetMoney" />
+        <item itemvalue="JUnit.VendingServiceLayerImplTest.testGetItem" />
         <item itemvalue="JUnit.VendingServiceLayerImplTest.testGetInventory" />
       </list>
     </recent_temporary>
@@ -253,6 +253,11 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Service/VendingServiceLayerImplTest.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

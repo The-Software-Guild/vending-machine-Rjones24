@@ -17,7 +17,7 @@ public enum Coin {
         BigDecimal changeValue = Money.subtract(ItemPrice);
         if (changeValue.doubleValue() < 0) {
             throw new VendingInsufficientFundsException("You have not entered enough money you have £" + Money + " But this item costs £" + ItemPrice + " so have your money back");
-        } else if (changeValue.intValue() == 0.0) {
+        } else if (changeValue.equals(BigDecimal.valueOf(0.0))) {
             return ("There is no change to be given");
         }
         Change = new StringBuilder("Here is your change :");
@@ -25,7 +25,7 @@ public enum Coin {
             if (changeValue.compareTo(coin.current) >= 0) {
                 int amount = changeValue.divide(coin.current, RoundingMode.HALF_UP).intValue();
                 Change.append(" " + amount + " :" + coin.current + "p");
-                changeValue = changeValue.subtract(coin.current.multiply(BigDecimal.valueOf(amount)));
+                changeValue = changeValue.subtract(coin.current.multiply(new BigDecimal(amount)));
             }
         }
         return Change.toString();

@@ -15,10 +15,10 @@ class VendingDaoFileImplTest {
     VendingDao testDao;
 
     @org.junit.jupiter.api.BeforeEach
-    void setUp() throws Exception{
+    void setUp() throws Exception {
         String TestFile = "TextDao.txt";
         new FileWriter(TestFile);
-        PrintWriter out =new PrintWriter( new FileWriter(TestFile),true);
+        PrintWriter out = new PrintWriter(new FileWriter(TestFile), true);
         out.printf("Water::1.99::0%n" +
                 "Waffles::3.00::5%n" +
                 "Sprite::1.59::3%n" +
@@ -29,15 +29,16 @@ class VendingDaoFileImplTest {
     }
 
     @Test
-    public void testGetInventory() throws Exception{
+    public void testGetInventory() throws Exception {
         List<VendingMachine> INVENTORY = testDao.getInventory();
 
         assertNotNull(INVENTORY, "The Inventory must not null");
         assertEquals(5, INVENTORY.size(), "The inventory should contain 5 items");
         assertTrue(testDao.getInventory().containsAll(INVENTORY));
     }
+
     @Test
-    public void testSelect() throws Exception{
+    public void testSelect() throws Exception {
         List<VendingMachine> INVENTORY = testDao.getInventory();
         VendingMachine Item = testDao.SelectItem("Cola");
         assertTrue(INVENTORY.contains(Item), "item was in inventory");
@@ -46,8 +47,9 @@ class VendingDaoFileImplTest {
         assertEquals(Item.getPrice(), new BigDecimal("1.99"), "item was in inventory");
         assertEquals(Item.getQuantity(), 4, "item was in inventory");
     }
+
     @Test
-    public void testInventoryUpdate() throws Exception{
+    public void testInventoryUpdate() throws Exception {
 
         List<VendingMachine> INVENTORY = testDao.getInventory();
         VendingMachine Item = testDao.SelectItem("Cola");
@@ -57,8 +59,8 @@ class VendingDaoFileImplTest {
         assertEquals(Item.getPrice(), new BigDecimal("1.99"), "item was in inventory");
         assertEquals(Item.getQuantity(), 4, "item was in inventory");
 
-        Item.setQuantity(Item.getQuantity()-1);
-        testDao.UpdateInventory("Cola",Item);
+        Item.setQuantity(Item.getQuantity() - 1);
+        testDao.UpdateInventory("Cola", Item);
 
         VendingMachine ItemUp = testDao.SelectItem("Cola");
         assertFalse(INVENTORY.contains(Item), "item was in inventory");
