@@ -15,8 +15,8 @@ public class App {
         VendingView myView = new VendingView(myIo);
         VendingDao myDao = new VendingDaoFileImpl();
         AuditDao myAuditDao = new AuditDaoImpl();
-        VendingServiceLayer myService = new VendingServiceLayerImpl(myDao,myAuditDao);
-        VendingController controller = new VendingController(myService,myView);
+        VendingServiceLayer myService = new VendingServiceLayerImpl(myDao, myAuditDao);
+        VendingController controller = new VendingController(myService, myView);
         controller.Run();
     }
 }

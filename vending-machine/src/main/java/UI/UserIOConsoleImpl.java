@@ -2,7 +2,7 @@ package UI;
 
 import java.util.Scanner;
 
-public class UserIOConsoleImpl implements UserIO{
+public class UserIOConsoleImpl implements UserIO {
 
     final private Scanner Input = new Scanner(System.in);
 

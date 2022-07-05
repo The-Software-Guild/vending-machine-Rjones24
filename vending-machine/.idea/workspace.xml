@@ -7,7 +7,6 @@
     <list default="true" id="9d240b6f-2533-4aaf-8635-3ee8e45f5683" name="Changes" comment="#setup">
       <change afterPath="$PROJECT_DIR$/.idea/vending-machine.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Inventory.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/Controller/VendingController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/DAO/AuditDao.java" afterDir="false" />
@@ -20,6 +19,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/Service/VendingNoItemInventoryException.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/Service/VendingServiceLayer.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/Service/VendingServiceLayerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/audit.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/DAO/VendingDaoFileImplTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/Service/VendingServiceLayerImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
@@ -27,6 +27,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UI/UserIOConsoleImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI/UserIOConsoleImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/UI/VendingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UI/VendingView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,17 +157,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/DAO/AuditDaoImpl.java</url>
-          <line>10</line>
+          <line>11</line>
           <properties class="DAO.AuditDaoImpl" method="writeAuditEntry">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/App.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

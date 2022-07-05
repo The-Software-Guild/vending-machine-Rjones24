@@ -1,6 +1,6 @@
 package Service;
 
-public class VendingNoItemInventoryException extends Exception{
+public class VendingNoItemInventoryException extends Exception {
 
     public VendingNoItemInventoryException(String message) {
         super(message);

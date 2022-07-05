@@ -12,13 +12,13 @@ public class VendingView {
         this.io = io;
     }
 
-    public int PrintVendingDisplay(List<VendingMachine> inventory){
+    public int PrintVendingDisplay(List<VendingMachine> inventory) {
         io.print("#######Vending Machine#######");
         io.print("Hey you look like you could do with some food and drink");
         io.print("here is what i have to offer :)");
 
-        for(VendingMachine currentInventory: inventory){
-            if(currentInventory.getQuantity()>0) {
+        for (VendingMachine currentInventory : inventory) {
+            if (currentInventory.getQuantity() > 0) {
                 String vendingInfo = String.format("#%s: %.2f", currentInventory.getItemName(), currentInventory.getPrice());
                 io.print(vendingInfo);
             }
@@ -27,21 +27,22 @@ public class VendingView {
         io.print("Options");
         io.print("0. Add Money to machine");
         io.print("1. Walk Away");
-        return io.readInt("Would you like to add money to the machine or walk away", 0,1);
+        return io.readInt("Would you like to add money to the machine or walk away", 0, 1);
     }
 
-    public void blank(){
+    public void blank() {
         io.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
-    public BigDecimal AddMoney(){
+
+    public BigDecimal AddMoney() {
         return BigDecimal.valueOf(io.readDouble("please enter the amount of money you have into the machine"));
     }
 
-    public void displayChange(String change){
+    public void displayChange(String change) {
         io.print(change);
     }
 
-    public String itemSelect(){
+    public String itemSelect() {
         return io.readString("Please Select an item");
     }
 
@@ -50,12 +51,12 @@ public class VendingView {
         io.print("Good Bye!!!");
     }
 
-    public void vend(VendingMachine vending){
+    public void vend(VendingMachine vending) {
         io.print("your item is " + vending.getItemName());
         io.print("that cost you £" + vending.getPrice());
     }
 
-    public void displayCurrentMoney(BigDecimal money){
+    public void displayCurrentMoney(BigDecimal money) {
         io.print("Current money is at £" + money);
     }
 

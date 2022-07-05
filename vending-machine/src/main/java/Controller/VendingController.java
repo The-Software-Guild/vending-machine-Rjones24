@@ -27,7 +27,7 @@ public class VendingController {
                 option = getOption();
                 switch (option) {
                     case 0 -> StartVending();
-                    case 1 ->  keepGoing = false;
+                    case 1 -> keepGoing = false;
                     default -> unknownCommand();
                 }
             }
@@ -59,12 +59,12 @@ public class VendingController {
             } while (ItemToBuy == null);
 
             boolean check;
-            do{
-                check = service.CheckSelectItem(item , ItemToBuy);
-            }while (!check);
-            service.BuyItem(ItemToBuy,money);
+            do {
+                check = service.CheckSelectItem(item, ItemToBuy);
+            } while (!check);
+            service.BuyItem(ItemToBuy, money);
             view.vend(ItemToBuy);
-            view.displayChange( service.GetMoney(ItemToBuy.getPrice(),money));
+            view.displayChange(service.GetMoney(ItemToBuy.getPrice(), money));
         } catch (VendingNoItemInventoryException | VendingInsufficientFundsException | VendingPersistenceException e) {
             view.blank();
             view.displayErrorMessage(e.getMessage());

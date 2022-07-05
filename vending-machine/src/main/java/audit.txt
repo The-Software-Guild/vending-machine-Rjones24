@@ -1,0 +1,3 @@
+2022-07-05T10:19:34.446932400 : there is no Water left
+2022-07-05T10:19:59.656943500 : 1  Waffles was brought 5left
+2022-07-05T10:19:59.661915600 : the following change was given out Here is your change : 190 :0.50p

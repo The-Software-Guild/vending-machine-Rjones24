@@ -6,9 +6,9 @@ import java.io.*;
 import java.math.BigDecimal;
 import java.util.*;
 
-public class VendingDaoFileImpl implements  VendingDao {
-    private final String File;
+public class VendingDaoFileImpl implements VendingDao {
     public static final String DELIMITER = "::";
+    private final String File;
     private final Map<String, VendingMachine> vending = new HashMap<>();
 
     public VendingDaoFileImpl(String file) {
@@ -19,17 +19,17 @@ public class VendingDaoFileImpl implements  VendingDao {
         File = "Inventory.txt";
     }
 
-    private void loader()throws VendingPersistenceException{
+    private void loader() throws VendingPersistenceException {
         Scanner scanner;
-        try{
-            scanner=new Scanner(new BufferedReader(new FileReader(File)));
+        try {
+            scanner = new Scanner(new BufferedReader(new FileReader(File)));
 
-        }catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             throw new VendingPersistenceException("-_- Could not load Inventory data into memory.", e);
         }
         String currentLine;
         VendingMachine currentItem;
-        while (scanner.hasNextLine()){
+        while (scanner.hasNextLine()) {
             currentLine = scanner.nextLine();
             currentItem = unmarshall(currentLine);
             vending.put(currentItem.getItemName(), currentItem);
@@ -37,7 +37,7 @@ public class VendingDaoFileImpl implements  VendingDao {
         scanner.close();
     }
 
-    private VendingMachine unmarshall(String ItemAsText){
+    private VendingMachine unmarshall(String ItemAsText) {
 
         String[] ItemTokens = ItemAsText.split(DELIMITER);
         String itemName = ItemTokens[0];
@@ -48,18 +48,18 @@ public class VendingDaoFileImpl implements  VendingDao {
         return VendingFromFile;
     }
 
-    private void Writer() throws VendingPersistenceException{
+    private void Writer() throws VendingPersistenceException {
         PrintWriter out;
 
-        try{
+        try {
             out = new PrintWriter((new FileWriter(File)));
-        }catch(IOException e){
-            throw new VendingPersistenceException("Could Not Save the Inventory Data." ,e);
+        } catch (IOException e) {
+            throw new VendingPersistenceException("Could Not Save the Inventory Data.", e);
         }
 
         String InventoryAsText;
         List<VendingMachine> Inventory = this.getInventory();
-        for(VendingMachine currentItem : Inventory){
+        for (VendingMachine currentItem : Inventory) {
             InventoryAsText = marshall(currentItem);
             out.println(InventoryAsText);
             out.flush();
@@ -67,10 +67,10 @@ public class VendingDaoFileImpl implements  VendingDao {
         out.close();
     }
 
-    private String marshall(VendingMachine item){
+    private String marshall(VendingMachine item) {
         String inventoryAsText = item.getItemName() + DELIMITER;
-        inventoryAsText+=item.getPrice()+DELIMITER;
-        inventoryAsText+=item.getQuantity();
+        inventoryAsText += item.getPrice() + DELIMITER;
+        inventoryAsText += item.getQuantity();
         return inventoryAsText;
     }
 
@@ -81,7 +81,7 @@ public class VendingDaoFileImpl implements  VendingDao {
     }
 
     @Override
-    public VendingMachine SelectItem(String ItemName) throws  VendingPersistenceException {
+    public VendingMachine SelectItem(String ItemName) throws VendingPersistenceException {
         loader();
         return vending.get(ItemName);
     }
