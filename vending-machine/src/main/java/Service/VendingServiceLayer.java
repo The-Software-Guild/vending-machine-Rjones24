@@ -12,9 +12,9 @@ public interface VendingServiceLayer {
 
     VendingMachine getItem(String Item) throws VendingPersistenceException, VendingNoItemInventoryException;
 
-    boolean CheckSelectItem(String ItemName, VendingMachine vending) throws VendingNoItemInventoryException;
+    boolean CheckSelectItem(String ItemName, VendingMachine vending) throws VendingNoItemInventoryException, VendingPersistenceException;
 
     void BuyItem(VendingMachine ItemToBuy, BigDecimal money) throws VendingInsufficientFundsException, VendingPersistenceException, VendingNoItemInventoryException;
 
-    String GetMoney(BigDecimal itemPrice, BigDecimal money) throws VendingInsufficientFundsException;
+    String GetMoney(BigDecimal itemPrice, BigDecimal money) throws VendingInsufficientFundsException, VendingPersistenceException;
 }

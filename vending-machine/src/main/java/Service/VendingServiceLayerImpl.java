@@ -1,5 +1,6 @@
 package Service;
 
+import DAO.AuditDao;
 import DAO.VendingDao;
 import DAO.VendingPersistenceException;
 import DTO.VendingMachine;
@@ -10,10 +11,12 @@ import java.util.stream.Collectors;
 
 public class VendingServiceLayerImpl implements VendingServiceLayer{
 
-    VendingDao dao;
+    private final VendingDao dao;
+    private final AuditDao auditDao;
 
-    public VendingServiceLayerImpl(VendingDao dao) {
+    public VendingServiceLayerImpl(VendingDao dao, AuditDao auditDao) {
         this.dao = dao;
+        this.auditDao = auditDao;
     }
 
     @Override
@@ -26,9 +29,10 @@ public class VendingServiceLayerImpl implements VendingServiceLayer{
         return dao.SelectItem(Item);
     }
     @Override
-    public boolean CheckSelectItem(String ItemName, VendingMachine vending) throws VendingNoItemInventoryException {
+    public boolean CheckSelectItem(String ItemName, VendingMachine vending) throws VendingNoItemInventoryException, VendingPersistenceException {
 
         if (vending.getQuantity() == 0) {
+            auditDao.writeAuditEntry("there is no " + vending.getItemName() + " left");
             throw new VendingNoItemInventoryException("there is no " + vending.getItemName() + " left");
         } else {
             return true;
@@ -42,12 +46,14 @@ public class VendingServiceLayerImpl implements VendingServiceLayer{
             ItemToBuy.setQuantity(ItemToBuy.getQuantity() - 1);
         }
         dao.UpdateInventory(ItemToBuy.getItemName(),ItemToBuy);
+        auditDao.writeAuditEntry("1  " + ItemToBuy.getItemName() + " was brought " + ItemToBuy.getQuantity() + "left");
     }
 
 
     @Override
-    public String GetMoney(BigDecimal itemPrice, BigDecimal money) throws VendingInsufficientFundsException {
+    public String GetMoney(BigDecimal itemPrice, BigDecimal money) throws VendingInsufficientFundsException, VendingPersistenceException {
         String changeToGive = Coin.change(money,itemPrice);
+        auditDao.writeAuditEntry(String.format("the following change was given out %s", changeToGive));
         return changeToGive;
     }
 }

@@ -1,4 +1,6 @@
 import Controller.VendingController;
+import DAO.AuditDao;
+import DAO.AuditDaoImpl;
 import DAO.VendingDao;
 import DAO.VendingDaoFileImpl;
 import Service.VendingServiceLayer;
@@ -12,7 +14,8 @@ public class App {
         UserIO myIo = new UserIOConsoleImpl();
         VendingView myView = new VendingView(myIo);
         VendingDao myDao = new VendingDaoFileImpl();
-        VendingServiceLayer myService = new VendingServiceLayerImpl(myDao);
+        AuditDao myAuditDao = new AuditDaoImpl();
+        VendingServiceLayer myService = new VendingServiceLayerImpl(myDao,myAuditDao);
         VendingController controller = new VendingController(myService,myView);
         controller.Run();
     }

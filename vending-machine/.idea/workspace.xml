@@ -5,6 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d240b6f-2533-4aaf-8635-3ee8e45f5683" name="Changes" comment="#setup">
+      <change afterPath="$PROJECT_DIR$/.idea/vending-machine.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Inventory.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/audit.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/AuditDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/AuditDaoImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/DAO/VendingDaoFileImplTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/Service/VendingServiceLayerImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
@@ -22,10 +28,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -70,6 +76,9 @@
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ryan\Documents\vending-machine-Rjones24\vending-machine" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="Service" />
@@ -131,17 +140,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="#setup" />
     <option name="LAST_COMMIT_MESSAGE" value="#setup" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Service/Coin.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/vending_machine$App.ic" NAME="App Coverage Results" MODIFIED="1656951562010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
