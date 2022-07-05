@@ -10,13 +10,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class VendingServiceLayerImpl implements VendingServiceLayer{
-
     private final VendingDao dao;
     private final AuditDao auditDao;
-
-    public VendingServiceLayerImpl(VendingDao dao, AuditDao auditDao) {
+    public VendingServiceLayerImpl(VendingDao dao, AuditDao audit) {
         this.dao = dao;
-        this.auditDao = auditDao;
+        this.auditDao = audit;
     }
 
     @Override
@@ -48,7 +46,6 @@ public class VendingServiceLayerImpl implements VendingServiceLayer{
         dao.UpdateInventory(ItemToBuy.getItemName(),ItemToBuy);
         auditDao.writeAuditEntry("1  " + ItemToBuy.getItemName() + " was brought " + ItemToBuy.getQuantity() + "left");
     }
-
 
     @Override
     public String GetMoney(BigDecimal itemPrice, BigDecimal money) throws VendingInsufficientFundsException, VendingPersistenceException {

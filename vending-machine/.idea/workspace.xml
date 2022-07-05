@@ -11,6 +11,14 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/DAO/AuditDao.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/DAO/AuditDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/VendingDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/VendingDaoFileImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/VendingPersistenceException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Service/Coin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Service/VendingInsufficientFundsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Service/VendingNoItemInventoryException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Service/VendingServiceLayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Service/VendingServiceLayerImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/DAO/VendingDaoFileImplTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/Service/VendingServiceLayerImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
@@ -28,8 +36,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="JUnit5 Test Class" />
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -140,6 +148,17 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="#setup" />
     <option name="LAST_COMMIT_MESSAGE" value="#setup" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/App.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/vending_machine$App.ic" NAME="App Coverage Results" MODIFIED="1656951562010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

@@ -76,8 +76,8 @@ public class VendingDaoFileImpl implements  VendingDao {
 
     @Override
     public List<VendingMachine> getInventory() throws VendingPersistenceException {
-       loader();
-       return new ArrayList<>(vending.values());
+        loader();
+        return new ArrayList<>(vending.values());
     }
 
     @Override
