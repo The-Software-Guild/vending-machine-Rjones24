@@ -1,0 +1,5 @@
+Water::1.99::0
+Waffles::3.00::5
+Sprite::1.59::3
+Monster Munch::1.25::10
+Cola::1.99::4
